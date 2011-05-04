@@ -29,9 +29,11 @@ if &t_Co > 2 || has("gui_running")
   endif
   syntax on
   set hlsearch
-  "set background=dark
-  "colorscheme solarized
-  colorscheme zenburn
+  set background=dark
+  colorscheme ir_black
+  "colorscheme zenburn
+  "colorscheme autumn
+  "colorscheme murphy
 endif
 
 
@@ -282,3 +284,8 @@ let g:rails_menu=2
 " make file executable
 command -nargs=* Xe !chmod +x <args>
 command! -nargs=0 Xe !chmod +x %
+
+" --------------------------------------------------------------------------
+" rspec
+" --------------------------------------------------------------------------
+map ,s :w\|!rspec -c %<CR>
